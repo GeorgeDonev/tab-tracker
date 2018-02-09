@@ -4,13 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node",
-    "lint": "./node_modules/.bin/eslint **/*.js"
+    "start": "eslint src/**/*.js && nodemon ./src/app.js --exec",
+    "server": "eslint src/**/*.js && node ./src/app.js",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js  --fix",
+    "seed": "node seed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "eslint": "^4.17.0",
     "nodemon": "^1.14.12"
   }
