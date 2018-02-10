@@ -8,7 +8,15 @@ const morgan = require('morgan')
 
 //build up the express server, very basic
 const app = express()
-app.use(morgan('combine'))
+app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
+
+app.get('/status', (req, res) => {
+    res.send({
+      message: 'hello world!'
+    })
+  })
+
+app.listen(process.env.PORT || 8081)
 
